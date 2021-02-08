@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Detalle</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content>
+  <ion-list>
+    <ion-item>
+        <ion-label color="primary" floating>Titulo</ion-label>
+        <ion-input type="text" placeholder="Titulo" [(ngModel)]="note.title"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label color="primary" floating>Descripcion</ion-label>
+        <ion-textarea placeholder="Descripcion" [(ngModel)]="note.description"></ion-textarea>
+      </ion-item>
+    </ion-list>
+    <div padding>
+      <button ion-button block (click)="addNote()">Guardar Nota</button>
+      <button *ngIf="id != 0" ion-button block (click)="deleteNote()" color="danger">Borrar Nota</button>
+    </div>
+</ion-content>

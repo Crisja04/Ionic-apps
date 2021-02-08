@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>To Do...</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="canReorder = !canReorder">
+        <ion-icon *ngIf="canReorder" name="md-close"></ion-icon>
+        <ion-icon *ngIf="!canReorder" name="md-create"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list reorder="{{ canReorder }}" (ionItemReorder)="reorderItems($event)">
+    <ion-item-sliding *ngFor="let item of todo">
+      <ion-item>
+        {{ item.task }}
+      </ion-item>
+    </ion-item-sliding> 
+    <ion-item-options side="right">
+      <button ion-button color="danger" (click)="deleteItem()">
+        <ion-icon name="md-trash"></ion-icon>
+        Eliminar
+      </button>
+    </ion-item-options>
+  </ion-list>
+  <ion-fab right bottom>
+    <button ion-fab color="primary" (click)="newItem()">
+      <ion-icon name="md-add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

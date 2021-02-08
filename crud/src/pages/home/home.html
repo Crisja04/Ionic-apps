@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Crud
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item *ngFor="let item of Students">
+    <p>List of Students</p>
+    <p>Name: {{item.name}}</p>
+    <p>Lastname:{{item.lastname}}</p>
+    <p>ID: {{item.id}}</p>
+    <ion-item>
+      <button ion-button [hidden]="VisibleEdit" (click)="edit(item)">Edit</button>
+      <button ion-button [hidden]="VisibleUpdate" (click)="execute(AddStudents)">Update</button>
+      <button ion-button (click)="delete(item.name)">Delete</button>
+    </ion-item>
+  </ion-item>
+  <ion-item>
+    <ion-label color="dark" stacked>Name</ion-label>
+    <ion-input type="text" [(ngModel)]="AddStudents.name" placeholder="Name"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label color="dark" stacked>Lastname</ion-label>
+      <ion-input type="text" [(ngModel)]="AddStudents.lastname" placeholder="Lastname"></ion-input>
+    </ion-item>
+    <ion-item>
+        <ion-label color="dark" stacked>ID</ion-label>
+        <ion-input type="text" [(ngModel)]="AddStudents.id" placeholder="ID"></ion-input>
+      </ion-item>
+
+
+  <ion-item>
+    <button ion-button (click)="add(AddStudents)">Add</button>
+  </ion-item>
+</ion-content>

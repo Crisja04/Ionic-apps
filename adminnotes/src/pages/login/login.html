@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+        <ion-label color="primary">User</ion-label>
+        <ion-input [(ngModel)]="users.email" placeholder="User"></ion-input>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label color="primary">Password</ion-label>
+        <ion-input [(ngModel)]="users.password" type="password" placeholder="Password"></ion-input>
+      </ion-item>
+  </ion-list>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <button ion-button (click)="login(users)" color="primary" full>Login</button>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button (click)="register(users)" color="primary" full>Registrarme</button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button block (click)="forgot(users.email)" color="danger" full>Forgot my password</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

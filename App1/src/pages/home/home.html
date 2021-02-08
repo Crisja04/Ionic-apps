@@ -1,0 +1,92 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Calculadora
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>      
+        <ion-list>
+          <ion-item>
+            <ion-input type="number" [(ngModel)]="auxiliar" [value]=""></ion-input>
+            
+          </ion-item>
+        </ion-list>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button ion-button color="primary" (click)="Borrar();" full>C </button>
+      </ion-col>
+      <ion-col >
+        <button ion-button color="primary" full>( ) </button>
+      </ion-col>
+      <ion-col >
+        <button ion-button color="primary" full>% </button>
+      </ion-col>
+      <ion-col >
+        <button ion-button color="primary" full (click)="LimpiarDivision();">/ </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col>
+          <button ion-button color="primary" (click)="Asignacion(7);" full>7 </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button color="primary" (click)="Asignacion(8);" full>8 </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button color="primary" (click)="Asignacion(9);" full>9 </button>
+        </ion-col>
+        <ion-col>
+          <button ion-button color="primary"full (click)="LimpiarProducto();">X </button>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+          <ion-col>
+            <button ion-button color="primary" (click)="Asignacion(4);" full>4 </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button color="primary" (click)="Asignacion(5);" full>5 </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button color="primary" (click)="Asignacion(6);" full>6 </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button color="primary" full (click)="LimpiarResta();">- </button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+              <button ion-button color="primary" (click)="Asignacion(1);" full>1 </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button color="primary" (click)="Asignacion(2);" full>2 </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button color="primary" (click)="Asignacion(3);" full>3 </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button color="primary" full (click)="LimpiarSuma();">+ </button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col>
+                <button ion-button color="primary" full>+/- </button>
+              </ion-col>
+              <ion-col>
+                <button ion-button color="primary" (click)="Asignacion(0);" full>0 </button>
+              </ion-col>
+              <ion-col>
+                <button ion-button color="primary" full>. </button>
+              </ion-col>
+              <ion-col>
+                <button ion-button color="primary" full (click)="Resultado();">= </button>
+              </ion-col>
+            </ion-row>
+  </ion-grid>
+</ion-content>
